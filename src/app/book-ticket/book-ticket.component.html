@@ -1,0 +1,556 @@
+<body>
+
+  <div class="contain  " style="margin-top: -100px;">
+    <div class="row p-5 text-center align-content-center" style="margin-left: 47;">
+        <div class="col-md-2" style="margin-left: 41%;" *ngIf="getMovieDetailResult.poster_path">
+                <img
+                src="https://image.tmdb.org/t/p/original/{{ getMovieDetailResult.poster_path }}" 
+                >
+                <h2 style="color: rgb(102, 102, 102);">Film Name</h2>
+                <h1 class="mt-2 mb-2">{{getMovieDetailResult.original_title}}</h1>
+        </div>
+      
+  
+  
+  </div>
+  
+  
+  <div style="background-color: rgb(0, 0, 0);" class="text-center">
+    <h2 style="color: rgb(102, 102, 102);">Select a Theatre</h2>
+    <div style="color: green; font-size: 30px;">
+      {{statusTH1}}{{statusTH2}}{{statusTH3}}
+  
+  </div>
+  
+    <div  style="background-color: rgb(0, 0, 0);text-align: center; margin-top: 70px;display: flex; margin-left: 450px;">
+       
+      <div class="align-content-around">
+        
+          <button (click)="enableDisableRuleth1()"  style="color: black;" [ngClass]="{'grey' : toggleTH1, 'red': !toggleTH1}">TH1</button>
+          </div>
+          <div class="">
+              <button style="color: black;"(click)="enableDisableRuleth2()"
+              [ngClass]="{'grey' : toggleTH2, 'red': !toggleTH2}" >TH2</button>
+              </div>
+              <div class="">
+                  <button (click)="enableDisableRuleth3()" style="color: black;" [ngClass]="{'grey' : toggleTH3, 'red': !toggleTH3}">TH3</button>
+                  </div>
+  
+    </div>
+  </div>
+  
+  
+      <br>
+      <br>
+      <br>
+      
+   <ul *ngIf="statusTH1" class="showcase">
+      <li>
+        <div class="seat"></div>
+        <small>Available</small>
+      </li>
+      <li>
+        <div class="seat selected"></div>
+        <small>Selected</small>
+      </li>
+      <li>
+        <div class="seat sold"></div>
+        <small>Sold</small>
+      </li>
+    </ul>
+  
+  
+    <div  *ngIf="statusTH1" class="container ">
+  
+      <div class="screen text-center" >
+        <p style="color: black; font-size: 30px; letter-spacing: 10px;">
+          ALL EYES THIS WAY
+        </p></div>
+  
+      <div class="row">
+         
+          
+       A <div class="seat"  (click)="enableDisableRule1()"
+        [ngClass]="{'green' : toggle1, 'red': !toggle1}">
+      </div>
+      
+        <div class="seat"  (click)="enableDisableRule2()"
+        [ngClass]="{'green' : toggle2, 'red': !toggle2}"></div>
+        <div class="seat"  (click)="enableDisableRule3()"
+        [ngClass]="{'green' : toggle3, 'red': !toggle3}"></div>
+        <div class="seat"  (click)="enableDisableRule4()"
+        [ngClass]="{'green' : toggle4, 'red': !toggle4}"></div>
+        <div class="seat"  (click)="enableDisableRule5()"
+        [ngClass]="{'green' : toggle5, 'red': !toggle5}"></div>
+        <div class="seat"  (click)="enableDisableRule6()"
+        [ngClass]="{'green' : toggle6, 'red': !toggle6}"></div>
+        <div class="seat"  (click)="enableDisableRule7()"
+        [ngClass]="{'green' : toggle7, 'red': !toggle7}"></div>
+        <div class="seat"  (click)="enableDisableRule8()"
+        [ngClass]="{'green' : toggle8, 'red': !toggle8}"></div>
+      </div>
+  
+      <div class="row">
+        
+       B <div class="seat" (click)="enableDisableRule9()"
+        [ngClass]="{'green' : toggle9, 'red': !toggle9}"></div>
+        <div class="seat" (click)="enableDisableRule10()"
+        [ngClass]="{'green' : toggle10, 'red': !toggle10}"></div>
+        <div class="seat" (click)="enableDisableRule11()"
+        [ngClass]="{'green' : toggle11, 'red': !toggle11}"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat" (click)="enableDisableRule12()"
+        [ngClass]="{'green' : toggle12, 'red': !toggle12}"></div>
+        <div class="seat" (click)="enableDisableRule13()"
+        [ngClass]="{'green' : toggle13, 'red': !toggle13}"></div>
+        <div class="seat" (click)="enableDisableRule14()"
+        [ngClass]="{'green' : toggle14, 'red': !toggle14}"></div>
+      </div>
+      <div class="row">
+       C <div class="seat" (click)="enableDisableRule15()"
+        [ngClass]="{'green' : toggle15, 'red': !toggle15}"></div>
+        <div class="seat" (click)="enableDisableRule16()"
+        [ngClass]="{'green' : toggle16, 'red': !toggle16}"></div>
+        <div class="seat" (click)="enableDisableRule17()"
+        [ngClass]="{'green' : toggle17, 'red': !toggle17}"></div>
+        <div class="seat" (click)="enableDisableRule18()"
+        [ngClass]="{'green' : toggle18, 'red': !toggle18}"></div>
+        <div class="seat" (click)="enableDisableRule19()"
+        [ngClass]="{'green' : toggle19, 'red': !toggle19}"></div>
+        <div class="seat" (click)="enableDisableRule20()"
+        [ngClass]="{'green' : toggle20, 'red': !toggle20}"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+      </div>
+      <div class="row">
+       D <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        E<div class="seat"  (click)="enableDisableRule()"
+        [ngClass]="{'green' : toggle, 'red': !toggle}"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+       F <div class="seat sold"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat"></div>
+      </div>
+    </div>  
+      
+    <div *ngIf="statusTH2" class="container">
+  
+      <div class="screen text-center" >
+        <p style="color: black; font-size: 30px; letter-spacing: 10px;">
+          ALL EYES THIS WAY
+        </p></div>
+  
+      <div class="row">
+         
+          
+       A <div class="seat"  (click)="enableDisableRule1()"
+        [ngClass]="{'green' : toggle1, 'red': !toggle1}">
+      </div>
+      
+        <div class="seat"  (click)="enableDisableRule2()"
+        [ngClass]="{'green' : toggle2, 'red': !toggle2}"></div>
+        <div class="seat"  (click)="enableDisableRule3()"
+        [ngClass]="{'green' : toggle3, 'red': !toggle3}"></div>
+        <div class="seat"  (click)="enableDisableRule4()"
+        [ngClass]="{'green' : toggle4, 'red': !toggle4}"></div>
+        <div class="seat"  (click)="enableDisableRule5()"
+        [ngClass]="{'green' : toggle5, 'red': !toggle5}"></div>
+        <div class="seat"  (click)="enableDisableRule6()"
+        [ngClass]="{'green' : toggle6, 'red': !toggle6}"></div>
+        <div class="seat"  (click)="enableDisableRule7()"
+        [ngClass]="{'green' : toggle7, 'red': !toggle7}"></div>
+        <div class="seat"  (click)="enableDisableRule8()"
+        [ngClass]="{'green' : toggle8, 'red': !toggle8}"></div>
+      </div>
+  
+      <div class="row">
+        
+       B <div class="seat" (click)="enableDisableRule9()"
+        [ngClass]="{'green' : toggle9, 'red': !toggle9}"></div>
+        <div class="seat" (click)="enableDisableRule10()"
+        [ngClass]="{'green' : toggle10, 'red': !toggle10}"></div>
+        <div class="seat" (click)="enableDisableRule11()"
+        [ngClass]="{'green' : toggle11, 'red': !toggle11}"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat" (click)="enableDisableRule12()"
+        [ngClass]="{'green' : toggle12, 'red': !toggle12}"></div>
+        <div class="seat" (click)="enableDisableRule13()"
+        [ngClass]="{'green' : toggle13, 'red': !toggle13}"></div>
+        <div class="seat" (click)="enableDisableRule14()"
+        [ngClass]="{'green' : toggle14, 'red': !toggle14}"></div>
+      </div>
+      <div class="row">
+       C <div class="seat" (click)="enableDisableRule15()"
+        [ngClass]="{'green' : toggle15, 'red': !toggle15}"></div>
+        <div class="seat" (click)="enableDisableRule16()"
+        [ngClass]="{'green' : toggle16, 'red': !toggle16}"></div>
+        <div class="seat" (click)="enableDisableRule17()"
+        [ngClass]="{'green' : toggle17, 'red': !toggle17}"></div>
+        <div class="seat" (click)="enableDisableRule18()"
+        [ngClass]="{'green' : toggle18, 'red': !toggle18}"></div>
+        <div class="seat" (click)="enableDisableRule19()"
+        [ngClass]="{'green' : toggle19, 'red': !toggle19}"></div>
+        <div class="seat" (click)="enableDisableRule20()"
+        [ngClass]="{'green' : toggle20, 'red': !toggle20}"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+      </div>
+      <div class="row">
+       D <div class="seat"></div>
+       <div class="seat sold"></div>
+       <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        E<div class="seat"  (click)="enableDisableRule()"
+        [ngClass]="{'green' : toggle, 'red': !toggle}"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+       F <div class="seat sold"></div>
+        <div class="seat"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+          <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat"></div>
+      </div>
+    </div>  
+    <div *ngIf="statusTH3" class="container">
+  
+      <div class="screen text-center" >
+        <p style="color: black; font-size: 30px; letter-spacing: 10px;">
+          ALL EYES THIS WAY
+        </p></div>
+  
+      <div class="row">
+         
+          
+       A <div class="seat"  (click)="enableDisableRule1()"
+        [ngClass]="{'green' : toggle1, 'red': !toggle1}">
+      </div>
+      
+        <div class="seat"  (click)="enableDisableRule2()"
+        [ngClass]="{'green' : toggle2, 'red': !toggle2}"></div>
+        <div class="seat"  (click)="enableDisableRule3()"
+        [ngClass]="{'green' : toggle3, 'red': !toggle3}"></div>
+        <div class="seat"  (click)="enableDisableRule4()"
+        [ngClass]="{'green' : toggle4, 'red': !toggle4}"></div>
+        <div class="seat"  (click)="enableDisableRule5()"
+        [ngClass]="{'green' : toggle5, 'red': !toggle5}"></div>
+        <div class="seat"  (click)="enableDisableRule6()"
+        [ngClass]="{'green' : toggle6, 'red': !toggle6}"></div>
+        <div class="seat"  (click)="enableDisableRule7()"
+        [ngClass]="{'green' : toggle7, 'red': !toggle7}"></div>
+        <div class="seat"  (click)="enableDisableRule8()"
+        [ngClass]="{'green' : toggle8, 'red': !toggle8}"></div>
+      </div>
+  
+      <div class="row">
+        
+       B <div class="seat" (click)="enableDisableRule9()"
+        [ngClass]="{'green' : toggle9, 'red': !toggle9}"></div>
+        <div class="seat" (click)="enableDisableRule10()"
+        [ngClass]="{'green' : toggle10, 'red': !toggle10}"></div>
+        <div class="seat" (click)="enableDisableRule11()"
+        [ngClass]="{'green' : toggle11, 'red': !toggle11}"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat" (click)="enableDisableRule12()"
+        [ngClass]="{'green' : toggle12, 'red': !toggle12}"></div>
+        <div class="seat" (click)="enableDisableRule13()"
+        [ngClass]="{'green' : toggle13, 'red': !toggle13}"></div>
+        <div class="seat" (click)="enableDisableRule14()"
+        [ngClass]="{'green' : toggle14, 'red': !toggle14}"></div>
+      </div>
+      <div class="row">
+       C <div class="seat" (click)="enableDisableRule15()"
+        [ngClass]="{'green' : toggle15, 'red': !toggle15}"></div>
+        <div class="seat" (click)="enableDisableRule16()"
+        [ngClass]="{'green' : toggle16, 'red': !toggle16}"></div>
+        <div class="seat" (click)="enableDisableRule17()"
+        [ngClass]="{'green' : toggle17, 'red': !toggle17}"></div>
+        <div class="seat" (click)="enableDisableRule18()"
+        [ngClass]="{'green' : toggle18, 'red': !toggle18}"></div>
+        <div class="seat" (click)="enableDisableRule19()"
+        [ngClass]="{'green' : toggle19, 'red': !toggle19}"></div>
+        <div class="seat" (click)="enableDisableRule20()"
+        [ngClass]="{'green' : toggle20, 'red': !toggle20}"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+      </div>
+      <div class="row">
+       D <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        E<div class="seat"  (click)="enableDisableRule()"
+        [ngClass]="{'green' : toggle, 'red': !toggle}"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+      </div>
+      <div class="row">
+       F <div class="seat sold"></div>
+       <div class="seat sold"></div>
+       <div class="seat sold"></div>
+       <div class="seat sold"></div>
+       <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+      </div>
+    </div>  
+      <div *ngIf="statusTH1"  style="background-color: rgb(0, 0, 0); color: white;">
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;8
+          
+      </div>
+      <div style="background-color: rgb(0, 0, 0);text-align: center; margin-top: 70px; ">
+          <h2 style="color: rgb(102, 102, 102);">
+              Seat Number
+          </h2>
+          <div style="color: green; font-size: 30px;">
+              {{status}}{{status1}}{{status2}}{{status3}}{{status4}}{{status5}}{{status6}}{{status7}}{{status8}}{{status9}}{{status10}}{{status11}}{{status12}}{{status13}}{{status14}}
+      
+          </div>
+        </div>
+        <h2 style="color: rgb(102, 102, 102);text-align: center; margin-top: 50px;">
+          Seat Type
+      </h2>
+        <div  style="background-color: rgb(0, 0, 0);text-align: center; margin-top: 70px;display: flex; margin-left: 450px;">
+       
+          <div class="">
+            
+              <button (click)="data2()" style="color: black;"
+              (click)="enableDisableRuleNS()"
+                  [ngClass]="{'grey' : toggleNS, 'red': !toggleNS}" >Normal Seats (Rs:250)</button>
+              </div>
+              <div class="">
+                  <button (click)="data()"style="color: black;"(click)="enableDisableRulePS()"
+                  [ngClass]="{'grey' : togglePS, 'red': !togglePS}" >Premium Seats (Rs:500)</button>
+                  </div>
+                  <div class="">
+                      <button (click)="data3()" style="color: black;"
+                      (click)="enableDisableRuleES()"
+                  [ngClass]="{'grey' : toggleES, 'red': !toggleES}" >Executive Seats (Rs:750)</button>
+                      </div>
+  
+        </div>
+        <h2 style="color: rgb(102, 102, 102);text-align: center; margin-top: 50px; background-color: black;">
+          Number Of Persons
+      </h2>
+  
+        <div class="price" style="display: flex;background-color: black;">
+  
+          <button (click)="enableDisableRule1b()"
+          [ngClass]="{'grey' : toggle1b, 'red': !toggle1b}"  style="width: 40px; color: black;" (click)="Number1()"
+          >1</button>  
+          <button (click)="enableDisableRule2b()"
+          [ngClass]="{'grey' : toggle2b, 'red': !toggle2b}"  style="width: 40px; color: black;"(click)="Number2()">2</button>  
+  
+          <button (click)="enableDisableRule3b()"
+          [ngClass]="{'grey' : toggle3b, 'red': !toggle3b}"  style="width: 40px; color: black;"(click)="Number3()">3</button>  
+  
+          <button style="width: 40px; color: black;"(click)="enableDisableRule4b()"
+          [ngClass]="{'grey' : toggle4b, 'red': !toggle4b}" (click)="Number4()">4</button>  
+  
+          <button (click)="enableDisableRule5b()"
+          [ngClass]="{'grey' : toggle5b, 'red': !toggle5b}"  style="width: 40px; color: black;" (click)="Number5()">5</button>  
+  
+          <button (click)="enableDisableRule6b()"
+          [ngClass]="{'grey' : toggle6b, 'red': !toggle6b}"  style="width: 40px; color: black;"(click)="Number6()">6</button>  
+  
+          <button (click)="enableDisableRule7b()"
+          [ngClass]="{'grey' : toggle7b, 'red': !toggle7b}"  style="width: 40px; color: black;"(click)="Number7()">7</button>  
+  
+          <button (click)="enableDisableRule8b()"
+          [ngClass]="{'grey' : toggle8b, 'red': !toggle8b}"  style="width: 40px; color: black;"(click)="Number8()">8</button>  
+  
+          
+  
+        </div>
+        <div style="background-color: black;">
+          <h2 style="color: rgb(102, 102, 102); text-align: center;background-color: black;">
+              Total Price : RS {{amount}}
+          </h2>
+  
+        </div>
+  
+    <!-- <div class="login_body">
+      <div class="login_box">
+          <form action="" [formGroup]="depoForm">
+              <div class="input_wrap">
+                  <input formControlName="email" type="text" placeholder="Enter email" name="email" id="">
+              </div>
+              <div class="input_wrap">
+                  <input formControlName="Planname" type="passwrod" placeholder="Film Name" name="password" id="">
+              </div>
+              <div class="input_wrap">
+                  <input formControlName="amount" type="passwrod" placeholder="Enter city"  name="password" value="" id="">
+              </div>
+              <div class="input_wrap">
+                  <input formControlName="amount" type="passwrod" placeholder="Theatre Name" name="password" id="">
+              </div>
+              <div class="input_wrap">
+                  <input formControlName="amount" type="passwrod" placeholder="Amount" name="password" id="">
+              </div>
+  
+            
+              <div class="input_wrap">
+                  <button (click)="deposit()" >Confirm Booking</button>
+                  </div>
+                  
+          </form>
+      </div>-->
+      <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Checkout Page</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <h2>
+                <b>            Delivery Address </b>
+              </h2>
+              <form action="" class="form-control p-3  ">
+                <input class="form-control" type="text" placeholder="Name"> <br>
+                <input class="form-control" type="text" placeholder="Address"> <br>
+                <input class="form-control" type="text" placeholder="PinCode"><br>
+                <input class="form-control" type="text" placeholder="State"><br>
+                <input class="form-control" type="text" placeholder="Country"><br>
+                <input class="form-control"    type="text" placeholder="Contact Number"><br>
+                <input class="form-control"    type="text" placeholder="Email"><br>
+    
+    
+    
+              </form>
+     
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-success"  data-bs-dismiss="modal">Proceed</button>
+            </div>
+          </div>
+        </div>
+      </div> -->
+  
+  
+      <div  style="text-align: center;background-color: black;">
+          <button class="btn btn-danger" style="border-radius: 5px; padding: 10px;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Confirm Booking</button>   
+      </div>
+      <div style="background-color: black;" class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <!-- <h1 class="modal-title fs-5" id="staticBackdropLabel">Checkout Page</h1> -->
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <h2>
+                <b>BOOKING DETAILS </b>
+              </h2>
+              <form [formGroup]="emailForm" style="color: black;" >
+                <!-- <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                      Please enter a valid email address
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                      Email is <strong>required</strong>
+                    </mat-error>
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                  </mat-form-field> -->
+                  <mat-form-field class="w-100" appearance="outline"  >
+                    <mat-label style="color: black;">{{user}}</mat-label>
+                   <input matInput disabled value="">
+                   <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label style="color: black;">Film Name:{{getMovieDetailResult.original_title}}</mat-label>
+           <input matInput disabled value="">
+           <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field> 
+                  <mat-form-field class="w-100" appearance="outline">
+                    <mat-label style="color: black;">Theatre name:{{statusTH1}}{{statusTH3}}{{statusTH2}}</mat-label>
+                   <input matInput disabled value="">
+                   <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label style="color: black;">Seats:{{status}}{{status1}}{{status2}}{{status3}}{{status4}}{{status5}}{{status6}}{{status7}}{{status8}}{{status9}}{{status10}}{{status11}}{{status12}}{{status13}}{{status14}}</mat-label>
+           <input matInput disabled value="">
+           <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label style="color: black;">Seat Type:{{statusPS}}{{statusNS}}{{statusES}}</mat-label>
+              <input matInput disabled value="">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label style="color: black;">Ticket Charge:{{amount}}</mat-label>
+              <input matInput disabled value="">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+          </form>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <ng-container *ngIf=" getMovieDetailResult">
+                  <a class="btn btn-md bg-success" (click)="alert()"  [routerLink]="['/rent',getMovieDetailResult.id]">Proceed</a>&nbsp;&nbsp;
+              </ng-container> 
+                <!-- <button type="button" class="btn btn-success" (click)="alert()" data-bs-dismiss="modal">Proceed</button> -->
+              </div>
+            </div>
+          </div>
+        </div> 
+</div>
+</div>
+</body>
+
+
+  
+  

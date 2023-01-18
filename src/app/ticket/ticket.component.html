@@ -1,0 +1,76 @@
+
+
+<nav class="navbar navbar-expand-lg ">
+
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/main">Home</a>
+          </li>
+          <li class="nav-item">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<div class="container">
+
+
+
+<div class="ticket" *ngFor="let t of details">
+	<div class="left">
+		<div class="image">
+			<p class="admit-one">
+				<span>ADMIT ONE</span>
+				<span>ADMIT ONE</span>
+				<span>ADMIT ONE</span>
+			</p>
+			<div class="ticket-number">
+			
+			</div>
+		</div>
+		<div class="ticket-info" >
+				<div *ngFor="let t of details2">
+					<h3>Ticket Date:{{t.Date}}</h3>
+				</div>
+			<div class="show-name">
+				<h2>{{getMovieDetailResult.original_title}}</h2>
+			</div>
+			<div class="time" >
+			
+
+				<h2>Seats:{{t.Seats}}</h2>
+				<h2>Seat Type:{{t.seatType}}</h2>
+				<h2>Theatre:{{t.Theatre}}</h2>
+			</div>
+		
+		</div>
+	</div>
+	<div class="right">
+		<p class="admit-one">
+			<span>ADMIT ONE</span>
+			<span>ADMIT ONE</span>
+			<span>ADMIT ONE</span>
+		</p>
+		<div class="right-info-container">
+			<div class="barcode">
+				<img src="https://external-preview.redd.it/cg8k976AV52mDvDb5jDVJABPrSZ3tpi1aXhPjgcDTbw.png?auto=webp&s=1c205ba303c1fa0370b813ea83b9e1bddb7215eb" alt="QR code">
+			</div>
+			<p class="ticket-number">
+				#20030220
+			</p>
+		</div>
+	</div>
+</div>
+</div>
+<div class="mt-5" style="text-align: center;">
+    <h2 style="color: white;">
+        Ticket has been send to your mail
+    </h2>
+    <button class="btn btn-danger" style="border-radius: 5px; padding: 10px;">Click to download</button>   
+</div>

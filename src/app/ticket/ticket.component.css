@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body,
+html {
+	font-family: "Staatliches", cursive;
+	background: #d83565;
+	color: black;
+	font-size: 14px;
+	letter-spacing: 0.1em;
+}
+
+.ticket {
+    width: 300px;
+	display: flex;
+    flex-direction: column;
+	background: rgb(219, 219, 219);
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border-radius: 20px;
+    margin-left: 46%;
+    margin-top: 80px;
+
+}
+.navbar .navbar-brand
+{
+    color: #E50914;
+    font-weight: bold;
+}
+.navbar-nav .nav-item .nav-link
+{
+    color: #E50914;
+    font-weight: bold;
+}
+.left {
+	display: flex;
+}
+
+.image {
+	height: 250px;
+	width: 250px;
+	background-size: contain;
+	opacity: 0.85;
+}
+
+.admit-one {
+	position: absolute;
+	color: darkgray;
+	height: 250px;
+	padding: 0 10px;
+	letter-spacing: 0.15em;
+	display: flex;
+    font-size: 10px;
+	text-align: center;
+	justify-content: space-around;
+	writing-mode: vertical-rl;
+	transform: rotate(-180deg);
+    margin-left: 0px;
+}
+
+.admit-one span:nth-child(2) {
+	color: white;
+	font-weight: 700;
+}
+
+.left .ticket-number {
+	height: 250px;
+	width: 250px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	padding: 5px;
+}
+
+.ticket-info {
+	padding: 10px 30px;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: space-between;
+	align-items: center;
+    margin-left: -220px;
+}
+
+.date {
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+	padding: 2px 0;
+    font-size: 12px;
+	font-weight: 700;
+	display: flex;
+}
+
+.date span {
+	width: 100px;
+}
+
+.date span:first-child {
+	text-align: left;
+}
+
+.date span:last-child {
+	text-align: right;
+}
+
+
+
+
+.show-name h1 {
+	font-size: 48px;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	color: #000000;
+}
+
+.time {
+	padding: 10px 0;
+	color: #000000;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	font-weight: 700;
+}
+
+.time span {
+	font-weight: 400;
+	color: gray;
+}
+
+.left .time {
+	font-size: 16px;
+}
+
+
+.location {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	padding-top: 8px;
+	border-top: 1px solid gray;
+}
+
+.location .separator {
+	font-size: 20px;
+}
+
+.right {
+	width: 180px;
+	border-left: 1px dashed #404040;
+}
+
+.right .admit-one {
+	color: darkgray;
+}
+
+.right .admit-one span:nth-child(2) {
+	color: gray;
+}
+
+.right .right-info-container {
+	height: 250px;
+	padding: 10px 10px 10px 35px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+    margin-left: 200px;
+}
+
+.right .show-name h1 {
+	font-size: 18px;
+}
+
+.barcode {
+	height: 400px;
+    margin-left: -150px;
+}
+
+.barcode img {
+	height: 100%;
+
+}
+
+.right .ticket-number {
+	color: gray;
+    margin-left: -180px;
+
+}
+h2{
+	font-size: 20px;
+}

@@ -1,0 +1,39 @@
+
+
+<div class="mainscreen">
+    <div class="card">
+      <div class="leftside">
+        <img class="product"
+        src="https://image.tmdb.org/t/p/original/{{ getMovieDetailResult.poster_path }}" 
+        >
+      </div>
+      <div class="rightside">
+        <form action=""  [formGroup]="depoForm">
+          <h1>Booking Final Confirmation</h1>
+          <h2>Payment Information</h2>
+          <p>Email Id</p>
+          <input class="inputbox" formControlName="email" type="text"  name="email" id="">
+          <p>Seats Number</p>
+          <input class="inputbox" formControlName="seat" type="text"  name="email" id="">
+          <p>Seats Type</p>
+          <input class="inputbox" formControlName="seattype" type="text"  name="email" id="">
+          <p>Theatre</p>
+          <input class="inputbox" formControlName="theatre" type="text"  name="email" id="">
+
+          <p>Card Type</p>
+          <select class="inputbox" name="card_type" id="card_type" required>
+            <option value="">--Select a Card Type--</option>
+            <option value="Visa">Visa</option>
+            <option value="RuPay">RuPay</option>
+            <option value="MasterCard">MasterCard</option>
+          </select>
+          <p>Amount</p>
+          <input class="inputbox" formControlName="amount" type="text"  name="email" id="">
+
+          <button type="submit" class="button" (click)="deposit()" [routerLink]="['/tick',getMovieDetailResult.id]" >Pay and Confirm</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+

@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="main">NETFLIX</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/main">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="search">Search</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div class="contain mt-5 p-5">
+    <form action="" [formGroup]="searchForm">
+        <div class="row">
+            <div class="mb-3 col-lg-10">
+            <input  type="text" class="form-control" formControlName="movieName" placeholder="Search Movie Here">
+          </div>
+            <div class="col-lg-2">
+                <button (click)="submitForm()" class="btn btn-md">Search</button>
+            </div>
+        </div>
+        
+    </form>
+
+
+    <div class="row mt-5">
+        <div class="col-lg-4" *ngFor="let s of searchResult">
+            <div class="row">
+                    <div class="col-lg-6">
+                        <img src="https://image.tmdb.org/t/p/original/{{ s.poster_path }}" class="rowimg largeposter" alt="..." [routerLink]="['/main/movie',s.id]">
+                    </div>
+                    <div class="col-lg-9">
+                        <h5>{{s.original_title}}</h5>              
+                  </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

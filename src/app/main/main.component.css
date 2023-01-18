@@ -1,0 +1,118 @@
+body{
+    font-family: 'Ubuntu',sans-serif;
+}
+.navbar .navbar-brand
+{
+    color: #E50914;
+    font-weight: bold;
+}
+.navbar-nav .nav-item .nav-link
+{
+    color: #E50914;
+    font-weight: bold;
+}
+.container-fluid, .navbar{
+    background-color: black;
+}
+.carousel-inner .carousel-item  img
+{
+    height: 700px;
+    object-fit: cover;
+}
+.carousel-caption h2
+{
+    color: #E50914;
+    font-weight: bold;
+    font-size: 30px;
+}
+.carousel-caption p
+{
+    color: white;
+}
+.rowposter{
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.rowimg
+{
+    max-height: 100px;
+    object-fit: contain;
+    width: 100%;
+    box-sizing: content-box;
+    transition: transform 450ms;
+    margin-right: 7px;
+}
+
+.rowimg:hover
+{
+    transform: scale(1.09);
+    cursor: pointer;
+}
+
+.largeposter{
+    max-height: 300px;
+}
+
+.rowposter::-webkit-scrollbar
+{
+    display: none;
+}
+
+.Navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #333545;
+    display: inline-block;
+    width: 100%;
+  }
+  li {
+    float: right;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+    font-family: sans-serif;
+  }
+  
+  li a:hover {
+    background: #555;
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  
+  .active {
+    color: white;
+  }
+  
+  .logo {
+    margin-right: 20px;
+    margin-left: 20px;
+    float: left;
+    padding: 2px;
+  }
+  
+  #logo a:hover {
+    background: #f1f1f1;
+    text-decoration: underline;
+    color: black;
+  }
+  
+  #logoText {
+    font-weight: bold;
+    font-size: 15px;
+  }
+  
+  .logoColr2 {
+    color: white;
+    background-color: red;
+  }
+  
