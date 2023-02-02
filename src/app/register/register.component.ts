@@ -12,7 +12,7 @@ export class RegisterComponent implements OnInit {
 
   registerForm=this.fb.group({//group
     email:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$'),Validators.email]],
-    username:['',[Validators.required,Validators.pattern('[a-zA-Z]*')]],//array
+    username:['',[Validators.required,Validators.pattern('^[a-zA-Z]+(([a-zA-Z ])?[a-zA-Z]*)*$')]],//array
     pswd:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]*')]]
   })
   constructor(private router:Router , private ds:DataserviceService, private fb:FormBuilder) { }

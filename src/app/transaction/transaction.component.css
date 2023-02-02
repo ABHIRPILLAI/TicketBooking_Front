@@ -288,16 +288,17 @@ box-sizing: border-box;
     background: white;
     position:center;
     align-self: center;
-    top: 50rem;
+    top: 10rem;
     border-radius: 1.5rem;
     box-shadow: 4px 3px 20px #3535358c;
     display:flex;
     flex-direction: row;
+  
     
 }
 
 .leftside {
-	background: #030303;
+	background: #fefefe;
 	width: 25rem;
 	display: inline-flex;
     align-items: center;
@@ -309,7 +310,7 @@ box-sizing: border-box;
 .product {
     object-fit: cover;
 	width: 30em;
-    height: 60em;
+    height: 32em;
     /* border-radius: 100%; */
 }
 

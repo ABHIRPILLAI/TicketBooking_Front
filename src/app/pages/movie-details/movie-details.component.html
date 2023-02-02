@@ -5,8 +5,17 @@
                 src="https://image.tmdb.org/t/p/original/{{ getMovieDetailResult.poster_path }}" 
                 >
         </div>
-        <div class="col-lg-10 mt-5 p-4" >
+        <div class="col-lg-8  p-4 ms-5 me-5" >
                 <h1 class="mt-2 mb-2">{{getMovieDetailResult.original_title}}</h1>
+                <h5></h5>
+                <h5 class="mt-2 mb-2">Genres:{{getMovieDetailResult.genres[2].name}},{{getMovieDetailResult.genres[1].name}}</h5>
+                <h5 class="mt-2 mb-2">Runtime:{{getMovieDetailResult.runtime}}m</h5>
+                <h5 class="mt-2 mb-2">Release-Date:{{getMovieDetailResult.release_date}}</h5>
+                <h5 class="mt-2 mb-2">Rating:{{getMovieDetailResult.vote_average}}/10</h5>
+
+
+
+
                 <p class="mt-3 mb-3">{{getMovieDetailResult.overview}}</p>
 
                 <ng-container *ngIf=" getMovieDetailResult">
@@ -19,9 +28,19 @@
                 <br>
                 <br>
                 <h1>Choose a date for the film</h1>
-                <form action="" [formGroup]="dateForm">
-                <input formControlName="date" type="date" name="dateofbirth" id="dateofbirth" >      
+                <form action="" [formGroup]="dateForm" >
+                <input  formControlName="date" type="date" min="{{sdate}}"   name="dateofbirth" id="dateofbirth" > 
+                <a class="btn btn-md  ms-2" (click)="click()" >Choose time</a>
+     
                 </form>
+                <div *ngIf="date1==true"   >
+                    <h1 class="mt-2">Choose a time for the film</h1>
+                    <a class="btn btn-md mt-2" (click)="time12()">12pm</a>         &nbsp;&nbsp;      <a class="btn btn-md mt-2" (click)="time3()">3pm</a> &nbsp;&nbsp;
+                    <a class="btn btn-md mt-2" (click)="time7()">7pm</a>       &nbsp;&nbsp;          <a class="btn btn-md mt-2"(click)="time10()">10pm</a>
+                </div>
+
+
+
         </div>
         <div class="col-lg-10 mt-5 p-4" >
                  

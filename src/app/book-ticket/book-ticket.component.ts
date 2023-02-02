@@ -45,9 +45,10 @@ export class BookTicketComponent implements OnInit {
   th3="TH3"
   th4="TH4"
   user="";
-
+  seatName:any=[];;
   toppings = new FormControl('');
-
+  
+  seatNName:any;
   toppingList: string[] = [];
   Count=[]
   toggleTH1 = true;
@@ -173,22 +174,22 @@ export class BookTicketComponent implements OnInit {
   }
   enableDisableRule15() {
     this.toggle15 = !this.toggle15;
-    this.status15 = this.toggle15 ? "Enable" : "Disable";
+    this.status15 = this.toggle15 ? "" : "C1";
   } enableDisableRule16() {
     this.toggle16 = !this.toggle16;
-    this.status16 = this.toggle16 ? "Enable" : "Disable";
+    this.status16 = this.toggle16 ? "" : "C2";
   } enableDisableRule17() {
     this.toggle17 = !this.toggle17;
-    this.status17 = this.toggle17 ? "Enable" : "Disable";
+    this.status17 = this.toggle17 ? "" : "C3";
   } enableDisableRule18() {
     this.toggle18 = !this.toggle18;
-    this.status18 = this.toggle18 ? "Enable" : "Disable";
+    this.status18 = this.toggle18 ? "" : "C4";
   } enableDisableRule19() {
     this.toggle19 = !this.toggle19;
-    this.status19 = this.toggle19 ? "Enable" : "Disable";
+    this.status19 = this.toggle19 ? "" : "C5";
   } enableDisableRule20() {
     this.toggle20 = !this.toggle20;
-    this.status20 = this.toggle20 ? "Enable" : "Disable";
+    this.status20 = this.toggle20 ? "" : "C6";
   }
   enableDisableRule1b() {
     this.toggle1b = !this.toggle1b;
@@ -306,19 +307,21 @@ Number2()
 {
   this.number=this.seat*4
   this.amount=this.number
+
 }
 alert()
 {
-  if(this.status1||this.statusPS||this.statusES||this.statusNS||this.amount)
-  {
-    alert('Please pay your amount and confirm your details')
-    // this.rout.navigateByUrl("/rent")
+  var email=JSON.parse(localStorage.getItem('currentEmail')||"")
+  var amount=parseInt(this.amount)
+  this.ds.deposit5(email,amount).
+  subscribe((result:any)=>{
+    // this.rout.navigateByUrl("/tick")
+    console.log(result);
+      },(result:any)=>{
+    alert(result.error.message)
   }
-  
-  else
-  {
-    alert("Fill all details")
-  }
+  )
+ 
   }
 
 emailForm !: FormGroup;
@@ -331,5 +334,110 @@ trendingData()
     
   })
 }
+seatA1()
+{
+  // var seat="A1"
+  this.seatNName=this.seatName.push("A1")
 
+  
+
+}
+seatA2()
+{
+  this.seatNName=this.seatName.push("A2")
+
+  
+
+}
+seatA3()
+{
+  this.seatNName=this.seatName.push("A3")
+
+  
+
+}
+seatA4()
+{
+  this.seatNName=this.seatName.push("A4")
+
+  
+
+}
+seatA5()
+{
+  this.seatNName=this.seatName.push("A5")
+
+  
+
+}
+seatA6()
+{
+  this.seatNName=this.seatName.push("A6")
+
+  
+
+}
+seatA7()
+{
+  this.seatNName=this.seatName.push("A7")
+
+  
+
+}seatA8()
+{
+  this.seatNName=this.seatName.push("A8")
+ 
+
+}
+seatB1()
+{
+  this.seatNName=this.seatName.push("B1")
+ 
+}
+seatB2()
+{
+  this.seatNName=this.seatName.push("B2")
+
+}
+seatB3()
+{
+  this.seatNName=this.seatName.push("B3")
+
+  
+
+}
+seatB6()
+{
+  this.seatNName=this.seatName.push("B6")
+
+  
+
+}
+seatB7()
+{
+  this.seatNName=this.seatName.push("B7")
+
+  
+
+}
+seatB8()
+{
+  this.seatNName=this.seatName.push("B8")
+
+  
+
+}
+seatConfirm()
+{
+  var email=JSON.parse(localStorage.getItem('currentEmail')||"")//give the value to user and do string interpolattion
+  this.ds.deposit4(email,this.seatName).
+  subscribe((result:any)=>{
+    // this.rout.navigateByUrl("/tick")
+    console.log(result);
+      },(result:any)=>{
+    alert(result.error.message)
+  }
+  )
+  
+}
 }

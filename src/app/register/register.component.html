@@ -38,7 +38,7 @@
 </div> -->
  <div>
 <ul class="Navbar">
-    <li class="logo"><a id="logoText" href="index.html">Book<span class="logoColr2">My</span>Show </a></li>
+    <li class="logo"><a id="logoText" href="index.html">Book<span class="logoColr2">My</span>Movie </a></li>
     <!-- <li class="logo"><input type="text" id="search" placeholder="Search for Movies, Events and Sports."></li> -->
     <li class="dropdown">
        <!-- <select class="dropdown">
@@ -76,7 +76,9 @@
 </div>
 <br>
 <input class="textLogin" formControlName="username" type="text" placeholder="Your First Name" name="fname" id="">
-
+<div  style="color: red; margin-left:60px; text-decoration: underline; "   *ngIf="this.registerForm.get('username')?.errors && this.registerForm.get('username')?.touched">
+    Invalid Username
+</div>
 <br>
 <input class="textLogin" formControlName="pswd" type="passwrod" placeholder="password" name="password" id="">
 <br>
@@ -93,7 +95,7 @@
 
 <table>
 <tr>
-    <th> <p class="footer">Copyright &copy; 2023 All Rights Reserved by BookMyShow</p></th>
+    <th> <p class="footer">Copyright &copy; 2023 All Rights Reserved by BookMyMovie</p></th>
     <th>
         <a href="" class="fa fa-facebook"></a>
         <a href="" class="fa fa-twitter"></a>

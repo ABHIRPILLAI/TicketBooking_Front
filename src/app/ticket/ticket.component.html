@@ -22,55 +22,40 @@
 
 
 
-<div class="ticket" *ngFor="let t of details">
-	<div class="left">
-		<div class="image">
-			<p class="admit-one">
-				<span>ADMIT ONE</span>
-				<span>ADMIT ONE</span>
-				<span>ADMIT ONE</span>
-			</p>
-			<div class="ticket-number">
-			
-			</div>
-		</div>
-		<div class="ticket-info" >
-				<div *ngFor="let t of details2">
-					<h3>Ticket Date:{{t.Date}}</h3>
-				</div>
-			<div class="show-name">
-				<h2>{{getMovieDetailResult.original_title}}</h2>
-			</div>
-			<div class="time" >
-			
 
-				<h2>Seats:{{t.Seats}}</h2>
-				<h2>Seat Type:{{t.seatType}}</h2>
-				<h2>Theatre:{{t.Theatre}}</h2>
-			</div>
-		
-		</div>
+
+<figure id="content" #content  class="movie " style="margin-left: 5px;" *ngFor="let t of details">
+	<div class="movie__hero">
+		<img class="movie__img" src="https://external-preview.redd.it/cg8k976AV52mDvDb5jDVJABPrSZ3tpi1aXhPjgcDTbw.png?auto=webp&s=1c205ba303c1fa0370b813ea83b9e1bddb7215eb" alt="QR code">
 	</div>
-	<div class="right">
-		<p class="admit-one">
-			<span>ADMIT ONE</span>
-			<span>ADMIT ONE</span>
-			<span>ADMIT ONE</span>
-		</p>
-		<div class="right-info-container">
-			<div class="barcode">
-				<img src="https://external-preview.redd.it/cg8k976AV52mDvDb5jDVJABPrSZ3tpi1aXhPjgcDTbw.png?auto=webp&s=1c205ba303c1fa0370b813ea83b9e1bddb7215eb" alt="QR code">
-			</div>
-			<p class="ticket-number">
-				#20030220
-			</p>
-		</div>
+	<div class="movie__content">
+	  <div class="movie__title">
+		<h1 class="heading__primary">{{getMovieDetailResult.original_title}}</h1>
+		<div class="movie__tag movie__tag--1">{{getMovieDetailResult.genres[2].name}}</div>
+		<div class="movie__tag movie__tag--2">{{getMovieDetailResult.genres[1].name}}</div>
+	  </div>
+	  <p class="movie__description">
+		{{getMovieDetailResult.overview}}
+	  </p>
+
+	  <div class="movie__details">
+		<p class="movie__detail"><span class="icons icons-red"><i class="fas fa-camera-retro"></i> </span>Screen:{{x}}</p>
+		<p class="movie__detail" *ngFor="let t of details3"><span class="icons icons-grey"><i class="fas fa-clock"></i> </span >{{t.Time}}</p>
+		<p class="movie__detail" *ngFor="let t of details2"><span class="icons icons-grey"><i class="fa fa-calendar"></i> </span >{{t.Date}}</p>
+		<p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-file-invoice-dollar"></i>
+		  </span>{{t.seatType}}</p>
+	  </div>
+    <p class="movie__detail"><span class="icons icons-red"><i class="fa fa-user" aria-hidden="true"></i></span>Ticket Owner :{{user}}</p>
+
 	</div>
-</div>
-</div>
-<div class="mt-5" style="text-align: center;">
-    <h2 style="color: white;">
-        Ticket has been send to your mail
-    </h2>
-    <button class="btn btn-danger" style="border-radius: 5px; padding: 10px;">Click to download</button>   
-</div>
+	<div class="movie__price" *ngFor="let t of details4">SEAT NO:&nbsp;{{t.Seat}}</div>
+
+  </figure>
+
+  <div style="margin-left: 600px; margin-top: 30px;" ><h1 style="color: black;">
+	Ticket has been send to your email<i class="fa fa-check" style="color: green;" aria-hidden="true"></i>
+  </h1>
+  <h4 style=" color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ticket was issued on&nbsp;&nbsp;{{sdate|date:'short'}}</h4>
+
+  <button class="btn btn-danger" style="border-radius: 5px; padding: 10px; margin-left: 100px;" (click)="makePDF()">Click to download</button>  
+  </div>

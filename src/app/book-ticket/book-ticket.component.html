@@ -70,41 +70,56 @@
       <div class="row">
          
           
-       A <div class="seat"  (click)="enableDisableRule1()"
-        [ngClass]="{'green' : toggle1, 'red': !toggle1}">
-      </div>
-      
-        <div class="seat"  (click)="enableDisableRule2()"
+       A <div  class="seat" (click)="seatA1()"  (click)="enableDisableRule1()"
+        [ngClass]="{'green' : toggle1, 'red': !toggle1}"></div>
+        <div (click)="seatA2()" class="seat"  (click)="enableDisableRule2()"
         [ngClass]="{'green' : toggle2, 'red': !toggle2}"></div>
-        <div class="seat"  (click)="enableDisableRule3()"
+        <div (click)="seatA3()" class="seat"  (click)="enableDisableRule3()"
         [ngClass]="{'green' : toggle3, 'red': !toggle3}"></div>
-        <div class="seat"  (click)="enableDisableRule4()"
+        <div (click)="seatA4()" class="seat"  (click)="enableDisableRule4()"
         [ngClass]="{'green' : toggle4, 'red': !toggle4}"></div>
-        <div class="seat"  (click)="enableDisableRule5()"
+        <div (click)="seatA5()" class="seat"  (click)="enableDisableRule5()"
         [ngClass]="{'green' : toggle5, 'red': !toggle5}"></div>
-        <div class="seat"  (click)="enableDisableRule6()"
+        <div (click)="seatA6()" class="seat"  (click)="enableDisableRule6()"
         [ngClass]="{'green' : toggle6, 'red': !toggle6}"></div>
-        <div class="seat"  (click)="enableDisableRule7()"
+        <div (click)="seatA7()" class="seat"  (click)="enableDisableRule7()"
         [ngClass]="{'green' : toggle7, 'red': !toggle7}"></div>
-        <div class="seat"  (click)="enableDisableRule8()"
+        <div (click)="seatA8()" class="seat"  (click)="enableDisableRule8()"
         [ngClass]="{'green' : toggle8, 'red': !toggle8}"></div>
+        
+        
+
+        <!-- <div (click)="seatA2()" class="seat"  (click)="enableDisableRule2()"
+        [ngClass]="{'green' : toggle2, 'red': !toggle2}"></div>
+        <div (click)="seatA3()" class="seat"  (click)="enableDisableRule3()"
+        [ngClass]="{'green' : toggle3, 'red': !toggle3}"></div>
+        <div (click)="seatA4()" class="seat"  (click)="enableDisableRule4()"
+        [ngClass]="{'green' : toggle4, 'red': !toggle4}"></div>
+        <div (click)="seatA5()" class="seat"  (click)="enableDisableRule5()"
+        [ngClass]="{'green' : toggle5, 'red': !toggle5}"></div>
+        <div (click)="seatA6()" class="seat"  (click)="enableDisableRule6()"
+        [ngClass]="{'green' : toggle6, 'red': !toggle6}"></div>
+        <div (click)="seatA7()" class="seat"  (click)="enableDisableRule7()"
+        [ngClass]="{'green' : toggle7, 'red': !toggle7}"></div>
+        <div (click)="seatA8()" class="seat"  (click)="enableDisableRule8()"
+        [ngClass]="{'green' : toggle8, 'red': !toggle8}"></div> -->
       </div>
   
       <div class="row">
         
-       B <div class="seat" (click)="enableDisableRule9()"
+       B <div (click)="seatB1()"  class="seat" (click)="enableDisableRule9()"
         [ngClass]="{'green' : toggle9, 'red': !toggle9}"></div>
-        <div class="seat" (click)="enableDisableRule10()"
+        <div  (click)="seatB2()" class="seat" (click)="enableDisableRule10()"
         [ngClass]="{'green' : toggle10, 'red': !toggle10}"></div>
-        <div class="seat" (click)="enableDisableRule11()"
+        <div  (click)="seatB3()" class="seat" (click)="enableDisableRule11()"
         [ngClass]="{'green' : toggle11, 'red': !toggle11}"></div>
         <div class="seat sold"></div>
         <div class="seat sold"></div>
-        <div class="seat" (click)="enableDisableRule12()"
+        <div (click)="seatB6()" class="seat" (click)="enableDisableRule12()"
         [ngClass]="{'green' : toggle12, 'red': !toggle12}"></div>
-        <div class="seat" (click)="enableDisableRule13()"
+        <div  (click)="seatB7()" class="seat" (click)="enableDisableRule13()"
         [ngClass]="{'green' : toggle13, 'red': !toggle13}"></div>
-        <div class="seat" (click)="enableDisableRule14()"
+        <div (click)="seatB8()"  class="seat" (click)="enableDisableRule14()"
         [ngClass]="{'green' : toggle14, 'red': !toggle14}"></div>
       </div>
       <div class="row">
@@ -350,12 +365,15 @@
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;8
           
       </div>
+      <div  style="text-align: center;background-color: black;">
+        <button id="bn" class="btn btn-danger" style="border-radius: 5px; padding: 10px;" (click)="seatConfirm()">Confirm Seats</button>   
+    </div>
       <div style="background-color: rgb(0, 0, 0);text-align: center; margin-top: 70px; ">
           <h2 style="color: rgb(102, 102, 102);">
               Seat Number
           </h2>
           <div style="color: green; font-size: 30px;">
-              {{status}}{{status1}}{{status2}}{{status3}}{{status4}}{{status5}}{{status6}}{{status7}}{{status8}}{{status9}}{{status10}}{{status11}}{{status12}}{{status13}}{{status14}}
+              {{status}}{{status1}}{{status2}}{{status3}}{{status4}}{{status5}}{{status6}}{{status7}}{{status8}}{{status9}}{{status10}}{{status11}}{{status12}}{{status13}}{{status14}}{{status15}}{{status16}}{{status17}}{{status18}}{{status19}}{{status20}}
       
           </div>
         </div>
@@ -491,8 +509,8 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <h2>
-                <b>BOOKING DETAILS </b>
+              <h2 style="background-color: white;">
+                <b style="color: black;">BOOKING DETAILS </b>
               </h2>
               <form [formGroup]="emailForm" style="color: black;" >
                 <!-- <mat-form-field class="w-100" appearance="outline">
@@ -522,7 +540,7 @@
                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
           </mat-form-field>
           <mat-form-field class="w-100" appearance="outline">
-            <mat-label style="color: black;">Seats:{{status}}{{status1}}{{status2}}{{status3}}{{status4}}{{status5}}{{status6}}{{status7}}{{status8}}{{status9}}{{status10}}{{status11}}{{status12}}{{status13}}{{status14}}</mat-label>
+            <mat-label style="color: black;">Seats:{{status}}{{status1}}{{status2}}{{status3}}{{status4}}{{status5}}{{status6}}{{status7}}{{status8}}{{status9}}{{status10}}{{status11}}{{status12}}{{status13}}{{status14}}{{status15}}{{status16}}{{status17}}{{status18}}{{status19}}{{status20}}</mat-label>
            <input matInput disabled value="">
            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
         </mat-form-field>

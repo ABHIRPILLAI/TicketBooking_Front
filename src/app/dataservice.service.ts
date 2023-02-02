@@ -79,6 +79,36 @@ deposit2(email:any,date:any)
 
  return this.http.post('http://localhost:3000/deposit2',data, this.getToken())
 }
+deposit3(email:any,time:any)
+{
+ const data={
+  email,
+  time,
+
+ }
+
+ return this.http.post('http://localhost:3000/deposit3',data, this.getToken())
+}
+deposit4(email:any,seat:any)
+{
+ const data={
+  email,
+  seat,
+
+ }
+
+ return this.http.post('http://localhost:3000/deposit4',data, this.getToken())
+}
+deposit5(email:any,amount:any)
+{
+ const data={
+  email,
+  amount,
+
+ }
+
+ return this.http.post('http://localhost:3000/deposit5',data, this.getToken())
+}
 
 
 
@@ -101,5 +131,28 @@ getTransaction2(email:any)
 
  return this.http.post('http://localhost:3000/transaction2',data, this.getToken())
 }
+getTransaction3(email:any)
+{
+ const data={
+   email
+ }
 
+ return this.http.post('http://localhost:3000/transaction3',data, this.getToken())
+}
+getTransaction4(email:any)
+{
+ const data={
+   email
+ }
+
+ return this.http.post('http://localhost:3000/transaction4',data, this.getToken())
+}
+getTransaction5(email:any)
+{
+ const data={
+   email
+ }
+
+ return this.http.post('http://localhost:3000/transaction5',data, this.getToken())
+}
 }

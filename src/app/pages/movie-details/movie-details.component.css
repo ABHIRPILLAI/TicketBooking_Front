@@ -1,6 +1,7 @@
 img{
-    width: 100%;
-    height: auto;
+    width: 130%;
+    height: 500px;
+    /* height: auto; */
 }
 
 h1
@@ -12,6 +13,11 @@ h1
 p{
     color: #000000;
 }
+h5{
+  color: #E50914;
+  font-weight:500;
+
+}
 
 a{
     background-color: #ff0000;
@@ -19,7 +25,10 @@ a{
     text-decoration: none;
 }
 
-
+.btn
+{
+  width: 160px;
+}
 a:hover{
     background-color: #E50914;
     color: #ffffff;

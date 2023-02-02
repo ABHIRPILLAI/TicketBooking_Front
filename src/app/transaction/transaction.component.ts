@@ -11,11 +11,13 @@ import { MovieApiServiceService } from '../service/movie-api-service.service';
 })
 export class TransactionComponent implements OnInit {
   getMovieDetailResult:any;
-
+  details3:any
+  email:any
+  status:boolean=false
   depoForm=this.fb.group({//group
     // uname:['',[Validators.required,Validators.pattern('[a-zA-Z]*')]],//array
     email:['',[Validators.required,Validators.pattern("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")]],
-    amount:['',[Validators.required,Validators.pattern('[0-9]*')]],
+    amount:["",[Validators.required,Validators.pattern('[0-9]*')]],
     seat:['',[Validators.required,Validators.pattern("^[a-zA-Z0-9]")]],
     seattype:['',[Validators.required,Validators.pattern("^[a-zA-Z]")]],
     theatre:['',[Validators.required,Validators.pattern("^[a-zA-Z0-9]")]],
@@ -35,17 +37,25 @@ export class TransactionComponent implements OnInit {
         this.getMovieDetailResult = await result;
 
     });
+
+    this.email=JSON.parse(localStorage.getItem('currentEmail')||"");
+    this.ds.getTransaction5(this.email).subscribe(
+      (result:any)=>{
+       this.details3=result.Amount 
+      },(result)=>{
+        alert(result.error.message)
+      }
+    )
   }
  depo:any 
 deposit(){
-  var email=this.depoForm.value.email;
+  var email=JSON.parse(localStorage.getItem('currentEmail')||"");
   var seat=this.depoForm.value.seat;
   var seattype  =this.depoForm.value.seattype;
   var theatre = this.depoForm.value.theatre
   var amount=this.depoForm.value.amount;
 this.ds.deposit(email,seat,seattype,theatre,amount).
 subscribe((result:any)=>{
-  alert(result.message)
   // this.rout.navigateByUrl("/tick")
  this.depo= this.service.depo
   
@@ -53,18 +63,31 @@ subscribe((result:any)=>{
   alert(result.error.message)
 }
 )
-
-  // if (this.depositForm.valid) {
-  //   if(result)
-  // {
-  //   alert(`${amount} is credited ... Available balance is ${result}` )
-  // }
-  // else{
-  //   alert('Transaction error');
-  // }
-  // }else{
-  //   alert('invalid form')
-  // }
   
 }
+
+check()
+{
+  var data=this.depoForm.value.amount
+ for(let t of this.details3)
+ {
+  if(data==t.Amount)
+  {
+    console.log(`${data} and ${t.Amount}`);
+    
+    alert("Transaction successfull")
+    this.rout.navigateByUrl('/tick',this.getMovieDetailResult.id)
+    this.status=true
+    
+  }
+  else
+  {
+    alert("Please pay actual amount");
+  }
+  }
+ }
+  
+
+
 }
+
